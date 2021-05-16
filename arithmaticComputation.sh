@@ -21,4 +21,18 @@ Dictonary=(${result[@]})
 echo "Results of all comutation :" ${result[@]}
 
 Array=(${Dictonary[@]})
-echo  ${Array[*]}
+echo  ${Array[@]}
+
+for (( i=0;i<${#Array[@]};i++ ))
+do
+	for (( j=0;j<${#Array[@]};j++ ))
+	do
+	if [ ${Array[i]} -gt ${Array[j]} ]
+	then
+	temp=${Array[i]}
+	Array[i]=${Array[j]}
+	Array[j]=$temp
+	fi
+	done
+done
+echo "Descending Order" ${Array[@]}
