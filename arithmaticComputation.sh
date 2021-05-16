@@ -3,16 +3,18 @@
 echo "Enter Te Three Inputs ;; "
 read a b c
 
-echo $a $b $c
+declare -A result
 
-result=$($a+$b*$c))
-echo $result
+result[1]=$(($a+$b*$c))
+echo $result[1]
 
-result2=$(($a*$b+$c))
-echo $result2
+result[2]=$(($a*$b+$c))
+echo $result[2]
 
-result3=$(($c+$a/$b))
-echo $result3
+result[3]=$(($c+$a/$b))
+echo $result[3]
 
-result4=$(($a%$b+$c))
-echo $result4
+result[4]=$(($a%$b+$c))
+echo $result[4]
+
+echo "Results of all comutation :" ${result[@]}
