@@ -17,4 +17,8 @@ echo $result[3]
 result[4]=$(($a%$b+$c))
 echo $result[4]
 
+Dictonary=(${result[@]})
 echo "Results of all comutation :" ${result[@]}
+
+Array=(${Dictonary[@]})
+echo  ${Array[*]}
